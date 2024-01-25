@@ -12,21 +12,14 @@
 <body class="container">
     
     <h1 class="text-center">User Registration</h1>
-    <form action="{{url('/register')}}" method="post">
+    <form action="{{url('/')}}/register" method="post">
         @csrf
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="name" class="form-control" id="name" placeholder="Enter Your Name">
+        <div class="container">
+            <x-input type="text" name="name" label="Enter Your Name"/>
+            <x-input type="email" name="email" label="Enter Your Email"/>
+            <x-input type="password" name="password" label="Enter Your Password"/>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
-        <div class="form-control">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter Your Email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>

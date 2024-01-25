@@ -11,6 +11,13 @@ class RegistrationController extends Controller
     }
 
     function store(Request $req) {
-        echo print_r($req->all());
+
+        $req->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+        
+        print_r($req->all());
     }
 }
