@@ -19,5 +19,6 @@ class RegistrationController extends Controller
         ]);
         
         print_r($req->all());
+        
     }
 }
