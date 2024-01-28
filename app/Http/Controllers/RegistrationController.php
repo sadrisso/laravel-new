@@ -20,6 +20,13 @@ class RegistrationController extends Controller
         ]);
         
         $res->fill($req->all())->save();
+
+        return redirect('student/view');
         
+    }
+
+    function view() {
+        $student = Student::all();
+        return view('student-view', compact('student'));
     }
 }

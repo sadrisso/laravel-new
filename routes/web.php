@@ -9,3 +9,4 @@ Route::get('/', function () {
 
 Route::get('/register', [RegistrationController::class, 'index']);
 Route::post('/register', [RegistrationController::class, 'store']);
+Route::get('/student/view', [RegistrationController::class, 'view']);
