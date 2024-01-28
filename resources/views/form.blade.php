@@ -15,8 +15,8 @@
     <form action="{{url('/')}}/register" method="post">
         @csrf
         <div class="container">
-            <x-input type="text" name="name" label="Enter Your Name"/>
-            <x-input type="email" name="email" label="Enter Your Email"/>
+            <x-input type="text" name="name" label="Enter Your Name" value="{{$student->name ?? '' }}"/>
+            <x-input type="email" name="email" label="Enter Your Email" value="{{$student->email ?? '' }}"/>
             <x-input type="password" name="password" label="Enter Your Password"/>
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>

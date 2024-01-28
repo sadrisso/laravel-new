@@ -17,6 +17,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Password</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +26,10 @@
                 <td>{{$res->name}}</td>
                 <td>{{$res->email}}</td>
                 <td>{{$res->password}}</td>
+                <td>
+                    <a href="{{url('student/edit')}}/{{$res->id}}" class="btn btn-success">Edit</a>
+                    <a href="{{url('student/delete')}}/{{$res->id}}" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
             @endforeach
         </tbody>

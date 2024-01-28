@@ -29,4 +29,13 @@ class RegistrationController extends Controller
         $student = Student::all();
         return view('student-view', compact('student'));
     }
+
+    function edit($id) {
+        $student = Student::find($id);
+        if(is_null($student)){
+             return redirect('student/view');
+        }else{
+            return view('form', compact('student'));
+        }
+    }
 }
