@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Student;
 
 class RegistrationController extends Controller
 {
@@ -10,7 +11,7 @@ class RegistrationController extends Controller
         return view('form');
     }
 
-    function store(Request $req) {
+    function store(Request $req, Student $res) {
 
         $req->validate([
             'name' => 'required',
@@ -18,7 +19,7 @@ class RegistrationController extends Controller
             'password' => 'required'
         ]);
         
-        print_r($req->all());
+        $res->fill($req->all())->save();
         
     }
 }
