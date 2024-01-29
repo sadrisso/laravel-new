@@ -57,5 +57,16 @@ class RegistrationController extends Controller
         return redirect('student/view');
         
     }
+
+    function delete($id) {
+
+        if(is_null($id)){
+            return redirect('student/view');
+        }else{
+            Student::find($id)->delete();
+            return redirect()->back();
+        }
+        
+    }
     
 }
