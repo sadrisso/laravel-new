@@ -38,4 +38,24 @@ class RegistrationController extends Controller
             return view('form', compact('student'));
         }
     }
+
+    function update($id, Request $req) {
+
+        $req->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        $student = Student::find($id);
+
+        $student->name = $req['name'];
+        $student->email = $req['email'];
+        $student->password = $req['password'];
+        $student->save();
+
+        return redirect('student/view');
+        
+    }
+    
 }
