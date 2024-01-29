@@ -8,7 +8,9 @@ use App\Models\Student;
 class RegistrationController extends Controller
 {
     function index() {
-        return view('form');
+        $url = url('register');
+        $title = 'Student Registration';
+        return view('form', compact('url', 'title'));
     }
 
     function store(Request $req, Student $res) {
@@ -35,7 +37,9 @@ class RegistrationController extends Controller
         if(is_null($student)){
              return redirect('student/view');
         }else{
-            return view('form', compact('student'));
+            $url = url('student/update');
+            $title = 'Update Student Details';
+            return view('form', compact('student', 'url', 'title'));
         }
     }
 
@@ -64,7 +68,7 @@ class RegistrationController extends Controller
             return redirect('student/view');
         }else{
             Student::find($id)->delete();
-            return redirect()->back();
+        return redirect()->back();
         }
         
     }

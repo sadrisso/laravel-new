@@ -27,8 +27,8 @@
                 <td>{{$res->email}}</td>
                 <td>{{$res->password}}</td>
                 <td>
-                    <a href="{{url('student/edit')}}/{{$res->id}}" class="btn btn-success">Edit</a>
-                    <a href="{{url('student/delete')}}/{{$res->id}}" class="btn btn-danger">Delete</a>
+                    <a href="{{route('student.edit', ['id' => $res->id])}}" class="btn btn-success">Edit</a>
+                    <a href="{{route('student.delete', ['id' => $res->id])}}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             @endforeach

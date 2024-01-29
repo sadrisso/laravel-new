@@ -11,14 +11,14 @@
 </head>
 <body class="container">
     
-    <h1 class="text-center">User Registration</h1>
-    <form action="{{url('/')}}/register" method="post">
+    <h1 class="text-center">{{$title}}</h1>
+    <form action="{{$url}}" method="post">
         @csrf
         <div class="container">
             <input class="form-control "type="text" name="name" placeholder="Enter Your Name" value="{{$student->name ?? ''}}">
             <input class="form-control "type="email" name="email" placeholder="Enter Your Email" value="{{$student->email ?? ''}}">
             <input class="form-control "type="password" name="password" placeholder="Enter Your Password">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary form-control">Submit</button>
         </div>
     </form>
 

@@ -8,8 +8,8 @@ Route::get('/', function () {
 });
 
 Route::get('/register', [RegistrationController::class, 'index'])->name('register');
-Route::post('/register', [RegistrationController::class, 'store']);
+Route::post('/register', [RegistrationController::class, 'store'])->name('register');
 Route::get('/student/view', [RegistrationController::class, 'view'])->name('student.view');
-Route::get('/student/edit/{id}', [RegistrationController::class, 'edit']);
+Route::get('/student/edit/{id}', [RegistrationController::class, 'edit'])->name('student.edit');
 Route::get('/student/delete/{id}', [RegistrationController::class, 'delete'])->name('student.delete');
-Route::get('/student/update/{id}', [RegistrationController::class, 'update']);
+Route::get('/student/update/{id}', [RegistrationController::class, 'update'])->name('student.update');
