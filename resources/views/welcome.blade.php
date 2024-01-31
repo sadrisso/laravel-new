@@ -11,7 +11,19 @@
 </head>
 <body class="container">
 
-    <h1 class="text-center">Hello World</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class="nav ">
+    <li class="nav-item">
+    <a class="nav-link active" href="{{url('register')}}">Register</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="{{url('student/view')}}">View</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+    </ul>
+    </nav>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
