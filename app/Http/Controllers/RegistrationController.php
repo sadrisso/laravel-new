@@ -8,7 +8,7 @@ use App\Models\Student;
 class RegistrationController extends Controller
 {
     function index() {
-        $url = url('register');
+        $url = url('/register');
         $title = 'Student Registration';
         return view('form', compact('url', 'title'));
     }
@@ -37,25 +37,23 @@ class RegistrationController extends Controller
         if(is_null($student)){
              return redirect('student/view');
         }else{
-            $url = url('student/update');
+            $url = url('student/update'). '/' . $id;
             $title = 'Update Student Details';
             return view('form', compact('student', 'url', 'title'));
         }
     }
 
-    function update($id, Request $req) {
+    function update($id, Request $std) {
 
-        $req->validate([
+        $std->validate([
             'name' => 'required',
-            'email' => 'required',
-            'password' => 'required'
+            'email' => 'required'
         ]);
 
         $student = Student::find($id);
 
-        $student->name = $req['name'];
-        $student->email = $req['email'];
-        $student->password = $req['password'];
+        $student->name = $std['name'];
+        $student->email = $std['email'];
         $student->save();
 
         return redirect('student/view');

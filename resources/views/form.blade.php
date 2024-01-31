@@ -11,16 +11,27 @@
 </head>
 <body class="container">
     
+    
+    <form class="form" action="{{$url}}" method="post">
     <h1 class="text-center">{{$title}}</h1>
-    <form action="{{$url}}" method="post">
         @csrf
         <div class="container">
-            <input class="form-control "type="text" name="name" placeholder="Enter Your Name" value="{{$student->name ?? ''}}">
-            <input class="form-control "type="email" name="email" placeholder="Enter Your Email" value="{{$student->email ?? ''}}">
-            <input class="form-control "type="password" name="password" placeholder="Enter Your Password">
-            <button type="submit" class="btn btn-primary form-control">Submit</button>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input class="form-control "type="text" name="name" placeholder="Enter Your Name" value="{{$student->name ?? ''}}">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input class="form-control "type="email" name="email" placeholder="Enter Your Email" value="{{$student->email ?? ''}}">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control "type="password" name="password" placeholder="Enter Your Password">
+            </div>
+                <button type="submit" class="btn btn-primary form-control">Submit</button>
         </div>
     </form>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>

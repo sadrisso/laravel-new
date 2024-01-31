@@ -12,4 +12,4 @@ Route::post('/register', [RegistrationController::class, 'store'])->name('regist
 Route::get('/student/view', [RegistrationController::class, 'view'])->name('student.view');
 Route::get('/student/edit/{id}', [RegistrationController::class, 'edit'])->name('student.edit');
 Route::get('/student/delete/{id}', [RegistrationController::class, 'delete'])->name('student.delete');
-Route::get('/student/update/{id}', [RegistrationController::class, 'update'])->name('student.update');
+Route::post('/student/update/{id}', [RegistrationController::class, 'update'])->name('student.update');
