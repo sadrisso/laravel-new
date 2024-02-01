@@ -33,6 +33,7 @@ class RegistrationController extends Controller
     }
 
     function edit($id) {
+
         $student = Student::find($id);
         if(is_null($student)){
              return redirect('student/view');
@@ -41,6 +42,7 @@ class RegistrationController extends Controller
             $title = 'Update Student Details';
             return view('form', compact('student', 'url', 'title'));
         }
+        
     }
 
     function update($id, Request $std) {
