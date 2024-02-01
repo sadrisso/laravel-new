@@ -12,6 +12,7 @@
 <body class='container'>
 
     <table class='table'>
+        <h2 class="text-center mb-3 mt-3">Student Details Records</h2>
         <thead>
             <tr>
                 <th>Name</th>
@@ -37,6 +38,9 @@
 
     <a href="{{route('register')}}">
             <button type="submit" class="btn btn-warning form-control">Add Student</button>
+    </a>
+    <a href="{{url('/')}}">
+        <button type="submit" class="btn btn-info form-control mt-2">Back to Home</button>
     </a>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>

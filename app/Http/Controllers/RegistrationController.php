@@ -7,14 +7,17 @@ use App\Models\Student;
 
 class RegistrationController extends Controller
 {
-    function index() {
+
+    public function index() 
+    {
         $url = url('/register');
         $title = 'Student Registration';
         return view('form', compact('url', 'title'));
+
     }
 
-    function store(Request $req, Student $res) {
-
+    public function store(Request $req, Student $res) 
+    {
         $req->validate([
             'name' => 'required',
             'email' => 'required',
@@ -24,16 +27,16 @@ class RegistrationController extends Controller
         $res->fill($req->all())->save();
 
         return redirect('student/view');
-        
     }
 
-    function view() {
+    public function view() 
+    {
         $student = Student::all();
         return view('student-view', compact('student'));
     }
 
-    function edit($id) {
-
+    public function edit($id) 
+    {
         $student = Student::find($id);
         if(is_null($student)){
              return redirect('student/view');
@@ -42,11 +45,10 @@ class RegistrationController extends Controller
             $title = 'Update Student Details';
             return view('form', compact('student', 'url', 'title'));
         }
-        
     }
 
-    function update($id, Request $std) {
-
+    public function update($id, Request $std) 
+    {
         $std->validate([
             'name' => 'required',
             'email' => 'required'
@@ -58,19 +60,16 @@ class RegistrationController extends Controller
         $student->email = $std['email'];
         $student->save();
 
-        return redirect('student/view');
-        
+        return redirect('student/view');    
     }
 
-    function delete($id) {
-
+    public function delete($id) 
+    {
         if(is_null($id)){
             return redirect('student/view');
         }else{
             Student::find($id)->delete();
         return redirect()->back();
-        }
-        
-    }
-    
+        }    
+    }  
 }
