@@ -14,6 +14,9 @@ Route::get('/student/view', [RegistrationController::class, 'view'])->name('stud
 Route::get('/student/edit/{id}', [RegistrationController::class, 'edit'])->name('student.edit');
 Route::get('/student/delete/{id}', [RegistrationController::class, 'delete'])->name('student.delete');
 Route::post('/student/update/{id}', [RegistrationController::class, 'update'])->name('student.update');
+Route::get('/student/trash', [RegistrationController::class, 'trash'])->name('student.trash');
+Route::get('/student/restore/{id}', [RegistrationController::class, 'restore'])->name('student.restore');
+Route::get('/student/forceDelete/{id}', [RegistrationController::class, 'forceDelete'])->name('forceDelete');
 
 
 

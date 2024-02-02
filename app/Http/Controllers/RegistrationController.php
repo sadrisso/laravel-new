@@ -13,7 +13,6 @@ class RegistrationController extends Controller
         $url = url('/register');
         $title = 'Student Registration';
         return view('form', compact('url', 'title'));
-
     }
 
     public function store(Request $req, Student $res) 
@@ -35,16 +34,23 @@ class RegistrationController extends Controller
         return view('student-view', compact('student'));
     }
 
+    public function trash()
+    {
+        $student = Student::onlyTrashed()->get();
+        return view('student-trash', compact('student'));
+    }
+
     public function edit($id) 
     {
         $student = Student::find($id);
-        if(is_null($student)){
-             return redirect('student/view');
-        }else{
+        if(!is_null($student))
+        {
             $url = url('student/update'). '/' . $id;
             $title = 'Update Student Details';
             return view('form', compact('student', 'url', 'title'));
         }
+            
+        return view('student/view');
     }
 
     public function update($id, Request $std) 
@@ -65,11 +71,31 @@ class RegistrationController extends Controller
 
     public function delete($id) 
     {
-        if(is_null($id)){
-            return redirect('student/view');
-        }else{
-            Student::find($id)->delete();
-        return redirect()->back();
-        }    
-    }  
+        $student = Student::find($id);
+        if(!is_null($student))
+        {
+            $student->delete();
+        }  
+        return redirect('student/view');
+    } 
+    
+    public function restore($id)
+    {
+        $student = Student::withTrashed()->find($id);
+        if(!is_null($student))
+        {
+            $student->restore();
+        }
+        return redirect('student/trash');
+    }
+
+    public function forceDelete($id)
+    {
+        $student = Student::withTrashed()->find($id);
+        if(!is_null($student))
+        {
+            $student->forceDelete();
+        }
+        return redirect('student/trash');
+    }
 }

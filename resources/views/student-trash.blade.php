@@ -12,7 +12,7 @@
 <body class='container'>
 
     <table class='table'>
-        <h2 class="text-center mb-3 mt-3">Student Details Records</h2>
+        <h2 class="text-center mb-3 mt-3">Student Trash</h2>
         <thead>
             <tr>
                 <th>Name</th>
@@ -28,8 +28,8 @@
                 <td>{{$res->email}}</td>
                 <td>{{$res->password}}</td>
                 <td>
-                    <a href="{{route('student.edit', ['id' => $res->id])}}" class="btn btn-success">Edit</a>
-                    <a href="{{route('student.delete', ['id' => $res->id])}}" class="btn btn-danger">Trash</a>
+                    <a href="{{route('student.restore', ['id' => $res->id])}}" class="btn btn-primary">Restore</a>
+                    <a href="{{route('forceDelete', ['id' => $res->id])}}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             @endforeach
@@ -39,11 +39,8 @@
     <a href="{{route('register')}}">
             <button type="submit" class="btn btn-warning form-control">Add Student</button>
     </a>
-    <a href="{{url('/')}}">
-        <button type="submit" class="btn btn-info form-control mt-2">Back to Home</button>
-    </a>
-    <a href="{{url('/student/trash')}}">
-        <button type="submit" class="btn btn-danger form-control mt-2">Go to Trash</button>
+    <a href="{{url('/student/view')}}">
+        <button type="submit" class="btn btn-info form-control mt-2">View</button>
     </a>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
