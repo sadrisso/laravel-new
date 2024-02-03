@@ -12,7 +12,11 @@
 <body class="container">
     
     
-    <form class="form" action="{{$url}}" method="post">
+    <!-- <form class="form" action="{{$url}}" method="post"> -->
+
+
+    {!! Form::open(['url' => $url, 'mothod' => 'post']) !!} 
+
     <h1 class="text-center">{{$title}}</h1>
         @csrf
         <div class="container">
@@ -30,7 +34,10 @@
             </div>
             <button type="submit" class="btn btn-primary form-control">Submit</button>
         </div>
-    </form>
+
+    {!! Form::close() !!}
+
+    <!-- </form> -->
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
