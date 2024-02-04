@@ -98,4 +98,15 @@ class RegistrationController extends Controller
     }
         return redirect('student/trash');
     }
+
+    public function upload()
+    {
+        return view('upload');
+    }
+
+    public function upload_store(Request $request)
+    {
+        $fileName = time(). 'drisso.' . $request->file('image')->getClientOriginalExtension();
+        echo $request->file('image')->storeAs('uploads', $fileName);
+    }
 }

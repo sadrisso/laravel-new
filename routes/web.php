@@ -17,6 +17,8 @@ Route::post('/student/update/{id}', [RegistrationController::class, 'update'])->
 Route::get('/student/trash', [RegistrationController::class, 'trash'])->name('student.trash');
 Route::get('/student/restore/{id}', [RegistrationController::class, 'restore'])->name('student.restore');
 Route::get('/student/forceDelete/{id}', [RegistrationController::class, 'forceDelete'])->name('forceDelete');
+Route::get('/upload', [RegistrationController::class, 'upload'])->name('file.upload');
+Route::post('/upload', [RegistrationController::class, 'upload_store'])->name('file.upload');
 
 
 

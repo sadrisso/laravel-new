@@ -15,7 +15,7 @@
     <!-- <form class="form" action="{{$url}}" method="post"> -->
 
 
-    {!! Form::open(['url' => $url, 'mothod' => 'post']) !!} 
+    {!! Form::open(['url' => $url, 'method' => 'post']) !!} 
 
     <h1 class="text-center">{{$title}}</h1>
         @csrf
