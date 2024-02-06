@@ -91,13 +91,13 @@ class RegistrationController extends Controller
 
     public function forceDelete($id)
     {
-    $student = Student::withTrashed()->find($id);
-    if(!is_null($student))
-    {
-        $student->forceDelete();
-    }
-        return redirect('student/trash');
-    }
+        $student = Student::withTrashed()->find($id);
+        if(!is_null($student))
+        {
+            $student->forceDelete();
+        }
+            return redirect('student/trash');
+        }
 
     public function upload()
     {
