@@ -28,10 +28,15 @@ class RegistrationController extends Controller
         return redirect('student/view');
     }
 
-    public function view() 
+    public function view(Request $request) 
     {
-        $student = Student::all();
-        return view('student-view', compact('student'));
+        $search = $request['search'] ?? '';
+        if($search != ''){
+            $student = Student::where('name', 'LIKE', "%$search%")->orWhere('email', 'LIKE', "%$search%")->get();
+        }else{
+            $student = Student::all();
+        }
+        return view('student-view', compact('student', 'search'));
     }
 
     public function trash()

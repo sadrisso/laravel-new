@@ -13,6 +13,11 @@
 
     <table class='table'>
         <h2 class="text-center mb-3 mt-3">Student Details Records</h2>
+        <form action="" class="col-9">
+            <div class="form-group">
+                <input type="search" placeholder="Search here" name="search" id="" value="{{$search}}">
+            </div>
+            <button type="submit" class="btn btn-dark mb-3">Search</button>
         <thead>
             <tr>
                 <th>Name</th>
