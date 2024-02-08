@@ -41,6 +41,10 @@
         </tbody>
     </table>
 
+    <div class="row">
+        {{$student->links()}}
+    </div>
+
     <a href="{{route('register')}}">
             <button type="submit" class="btn btn-warning form-control">Add Student</button>
     </a>

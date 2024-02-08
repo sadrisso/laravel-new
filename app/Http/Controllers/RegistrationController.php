@@ -34,7 +34,7 @@ class RegistrationController extends Controller
         if($search != ''){
             $student = Student::where('name', 'LIKE', "%$search%")->orWhere('email', 'LIKE', "%$search%")->get();
         }else{
-            $student = Student::all();
+            $student = Student::paginate(15);
         }
         return view('student-view', compact('student', 'search'));
     }
