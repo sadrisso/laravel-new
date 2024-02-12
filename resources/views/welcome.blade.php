@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <ul class="nav ">
     <li class="nav-item">
-    <a class="nav-link active" href="{{url('register')}}">Register</a>
+    <a class="nav-link active" href="{{url('/student/register')}}">Register</a>
     </li>
     <li class="nav-item">
     <a class="nav-link" href="{{url('student/view')}}">View</a>
@@ -24,6 +24,9 @@
     </li>
     <li class="nav-item">
     <a class="nav-link" href="{{route('file.upload')}}">File Upload</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="{{url('/student/trash')}}">Trash</a>
     </li>
     </ul>
     </nav>

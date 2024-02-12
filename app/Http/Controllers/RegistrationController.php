@@ -10,7 +10,7 @@ class RegistrationController extends Controller
 
     public function index() 
     {
-        $url = url('/register');
+        $url = url('/student/register');
         $title = 'Student Registration';
         return view('form', compact('url', 'title'));
     }
@@ -50,7 +50,7 @@ class RegistrationController extends Controller
         $student = Student::find($id);
         if(!is_null($student))
         {
-            $url = url('student/update'). '/' . $id;
+            $url = url('/student/update'). '/' . $id;
             $title = 'Update Student Details';
             return view('form', compact('student', 'url', 'title'));
         }
@@ -71,7 +71,7 @@ class RegistrationController extends Controller
         $student->email = $std['email'];
         $student->save();
 
-        return redirect('student/view');    
+        return redirect('/student/view');    
     }
 
     public function delete($id) 
@@ -81,7 +81,7 @@ class RegistrationController extends Controller
         {
             $student->delete();
         }  
-        return redirect('student/view');
+        return redirect('/student/view');
     } 
     
     public function restore($id)
@@ -91,7 +91,7 @@ class RegistrationController extends Controller
         {
             $student->restore();
         }
-        return redirect('student/trash');
+        return redirect('/student/trash');
     }
 
     public function forceDelete($id)
@@ -101,7 +101,7 @@ class RegistrationController extends Controller
         {
             $student->forceDelete();
         }
-            return redirect('student/trash');
+            return redirect('/student/trash');
         }
 
     public function upload()

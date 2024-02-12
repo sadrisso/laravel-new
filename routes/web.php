@@ -8,17 +8,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/register', [RegistrationController::class, 'index'])->name('register');
-Route::post('/register', [RegistrationController::class, 'store'])->name('register');
-Route::get('/student/view', [RegistrationController::class, 'view'])->name('student.view');
-Route::get('/student/edit/{id}', [RegistrationController::class, 'edit'])->name('student.edit');
-Route::get('/student/delete/{id}', [RegistrationController::class, 'delete'])->name('student.delete');
-Route::post('/student/update/{id}', [RegistrationController::class, 'update'])->name('student.update');
-Route::get('/student/trash', [RegistrationController::class, 'trash'])->name('student.trash');
-Route::get('/student/restore/{id}', [RegistrationController::class, 'restore'])->name('student.restore');
-Route::get('/student/forceDelete/{id}', [RegistrationController::class, 'forceDelete'])->name('forceDelete');
-Route::get('/upload', [RegistrationController::class, 'upload'])->name('file.upload');
-Route::post('/upload', [RegistrationController::class, 'upload_store'])->name('file.upload');
+
+
+Route::group(['prefix' => '/student'], function()
+{
+    Route::get('/register', [RegistrationController::class, 'index'])->name('register');
+    Route::post('/register', [RegistrationController::class, 'store'])->name('register');
+    Route::get('/view', [RegistrationController::class, 'view'])->name('student.view');
+    Route::get('/edit/{id}', [RegistrationController::class, 'edit'])->name('student.edit');
+    Route::get('/delete/{id}', [RegistrationController::class, 'delete'])->name('student.delete');
+    Route::post('/update/{id}', [RegistrationController::class, 'update'])->name('student.update');
+    Route::get('/trash', [RegistrationController::class, 'trash'])->name('student.trash');
+    Route::get('/restore/{id}', [RegistrationController::class, 'restore'])->name('student.restore');
+    Route::get('/forceDelete/{id}', [RegistrationController::class, 'forceDelete'])->name('forceDelete');
+    Route::get('/upload', [RegistrationController::class, 'upload'])->name('file.upload');
+    Route::post('/upload', [RegistrationController::class, 'upload_store'])->name('file.upload');
+});
 
 
 

@@ -36,11 +36,11 @@
         </tbody>
     </table>
 
-    <a href="{{route('register')}}">
-            <button type="submit" class="btn btn-warning form-control">Add Student</button>
-    </a>
     <a href="{{url('/student/view')}}">
         <button type="submit" class="btn btn-info form-control mt-2">View</button>
+    </a>
+    <a href="{{url('/')}}">
+        <button type="submit" class="btn btn-dark form-control mt-2">Home</button>
     </a>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
