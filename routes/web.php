@@ -4,25 +4,25 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Http\Request;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 
-
-Route::group(['prefix' => '/student'], function()
+Route::group(['prefix' => 'student'], function()
 {
-    Route::get('/register', [RegistrationController::class, 'index'])->name('register');
-    Route::post('/register', [RegistrationController::class, 'store'])->name('register');
-    Route::get('/view', [RegistrationController::class, 'view'])->name('student.view');
-    Route::get('/edit/{id}', [RegistrationController::class, 'edit'])->name('student.edit');
-    Route::get('/delete/{id}', [RegistrationController::class, 'delete'])->name('student.delete');
-    Route::post('/update/{id}', [RegistrationController::class, 'update'])->name('student.update');
-    Route::get('/trash', [RegistrationController::class, 'trash'])->name('student.trash');
-    Route::get('/restore/{id}', [RegistrationController::class, 'restore'])->name('student.restore');
-    Route::get('/forceDelete/{id}', [RegistrationController::class, 'forceDelete'])->name('forceDelete');
-    Route::get('/upload', [RegistrationController::class, 'upload'])->name('file.upload');
-    Route::post('/upload', [RegistrationController::class, 'upload_store'])->name('file.upload');
+    Route::get('register', [RegistrationController::class, 'index'])->name('register');
+    Route::post('register', [RegistrationController::class, 'store'])->name('register');
+    Route::get('view', [RegistrationController::class, 'view'])->name('student.view');
+    Route::get('edit/{id}', [RegistrationController::class, 'edit'])->name('student.edit');
+    Route::get('delete/{id}', [RegistrationController::class, 'delete'])->name('student.delete');
+    Route::post('update/{id}', [RegistrationController::class, 'update'])->name('student.update');
+    Route::get('trash', [RegistrationController::class, 'trash'])->name('student.trash');
+    Route::get('restore/{id}', [RegistrationController::class, 'restore'])->name('student.restore');
+    Route::get('forceDelete/{id}', [RegistrationController::class, 'forceDelete'])->name('forceDelete');
+    Route::get('upload', [RegistrationController::class, 'upload'])->name('file.upload');
+    Route::post('upload', [RegistrationController::class, 'upload_store'])->name('file.upload');
 });
 
 

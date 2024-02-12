@@ -18,6 +18,7 @@
                 <input type="search" placeholder="Search here" name="search" id="" value="{{$search}}">
             </div>
             <button type="submit" class="btn btn-dark mb-3">Search</button>
+        </form>
         <thead>
             <tr>
                 <th>Name</th>
@@ -40,7 +41,9 @@
             @endforeach
         </tbody>
     </table>
-
+    <div class="row">
+        {{$student->links()}}
+    </div>
 
     <a href="{{url('/student/register')}}">
             <button type="submit" class="btn btn-warning form-control">Add Student</button>

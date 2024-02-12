@@ -12,24 +12,26 @@
 <body class="container">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <ul class="nav ">
-    <li class="nav-item">
-    <a class="nav-link active" href="{{url('/student/register')}}">Register</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link" href="{{url('student/view')}}">View</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link" href="{{url('/')}}">Home</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link" href="{{route('file.upload')}}">File Upload</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link" href="{{url('/student/trash')}}">Trash</a>
-    </li>
-    </ul>
+        <ul class="nav ">
+            <li class="nav-item">
+                <a class="nav-link active" href="{{url('/student/register')}}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('student/view')}}">View</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/')}}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('file.upload')}}">File Upload</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/student/trash')}}">Trash</a>
+            </li>
+        </ul>
     </nav>
+        
+    <h2 class="text-center mt-5">Welcome to laravel, I am learninng laravel</h2>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
